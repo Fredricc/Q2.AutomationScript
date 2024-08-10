@@ -9,10 +9,11 @@ namespace Q2.AutomationScript
             public void SimpleTest()
             {
                 var driver = new ChromeDriver();
-                driver.Manage().Window.Size = new System.Drawing.Size(1920, 1200);
+                driver.Manage().Window.Maximize();
                 driver.Navigate().GoToUrl("https://tafrija.azurewebsites.net/");
+                Thread.Sleep(3000);
 
-                driver.FindElement(By.Id("login")).Click();
+            driver.FindElement(By.Id("login")).Click();
                 driver.FindElement(By.Id("Input_Email")).SendKeys("kfred45.fk@gmail.com");
                 driver.FindElement(By.Id("Input_Password")).SendKeys("User@123");
                 driver.FindElement(By.Id("login-submit")).Click();
